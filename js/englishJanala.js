@@ -161,10 +161,6 @@ document.getElementById("search-btn").addEventListener("click", () => {
     .then((res) => res.json())
     .then((data) => {
       const allWords = data.data;
-      // const filteredWord = allWords.filter((word) =>
-      //   word.name.toLowerCase().includes(inputValue.toLowerCase())
-      // );
-      // console.log(filteredWord);
       const filteredWords = allWords.filter((word) =>
         word.word.toLowerCase().includes(inputValue.trim().toLowerCase())
       );
