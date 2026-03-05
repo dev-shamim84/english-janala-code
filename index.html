@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>English Janala</title>
+  <link rel="icon" href="./assets/logo.png">
+
+  <!-- daisy tailwind -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- css -->
+  <link rel="stylesheet" href="./styles/style.css" />
+</head>
+
+<body>
+  <header class="bg-[#8696af2c]">
+    <div class="container mx-auto px-4">
+      <div class="navbar shadow-sm">
+        <div class="navbar-start">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            <ul tabindex="-1" class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+              <li>
+                <a href="#">
+                  <i class="fa-regular fa-circle-question"></i>FAQ
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa-solid fa-book-open"></i></i>Learn
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout
+                </a>
+              </li>
+            </ul>
+          </div>
+          <a class="btn btn-ghost text-xl">
+            <span class="font-hind font-bold">English</span>
+            <img src="./assets/logo.png" alt="logo.png" />
+            <span class="font-hind font-bold">জানালা</span>
+          </a>
+        </div>
+        <div class="navbar-end navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1 gap-5">
+            <li>
+              <a href="#" class="btn btn-outline  btn-primary">
+                <i class="fa-regular fa-circle-question"></i>FAQ
+              </a>
+            </li>
+            <li>
+              <a href="#" class="btn btn-outline  btn-primary">
+                <i class="fa-solid fa-book-open"></i>Learn
+              </a>
+            </li>
+            <li>
+              <a href="#" class="btn btn-outline  btn-primary">
+                <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+  <section>
+    <div class="container mx-auto px-4">
+      <div class="flex flex-col md:flex-row items-center gap-5 justify-between py-10">
+        <div class=" flex-1 content space-y-3 order-2 md:order-1 text-center md:text-left">
+          <h1 class="font-pop font-bold text-5xl"><span class="text-[#00BCFF]">English </span>is Easy!!</h1>
+          <p class="font-hind  font-semibold">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার
+            দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে যাবে অন্য একটি Level এ</p>
+        </div>
+        <div class=" order-1 md:order-2 flex-1">
+          <img class=" rounded-full py-10" src="./assets/shamim.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- list lesson -->
+  <section class="my-10">
+    <div class="container mx-auto px-4">
+      <h2 class="font-pop font-bold text-4xl text-center my-10"><span class="text-[#00BCFF]">Let's </span><span>Learn
+          Vocabularies</span>
+      </h2>
+      <div id="level-container" class="flex justify-center flex-wrap gap-5 "></div>
+    </div>
+  </section>
+  <!-- search -->
+  <section>
+    <div class="container mx-auto px-4">
+      <div class="join flex justify-center items-center py-5">
+        <div>
+          <label class="input validator join-item">
+            <input id="search-input" type="text" placeholder="mail@site.com" required />
+          </label>
+        </div>
+        <button id="search-btn" class="btn btn-primary join-item">Search Word</button>
+      </div>
+    </div>
+  </section>
+  <!-- Show word Section -->
+  <section class="py-10 bg-slate-200">
+    <div class="container mx-auto px-4">
+      <div id="loading" class="flex justify-center items-center my-5 hidden">
+        <span class="loading loading-bars loading-xl"></span>
+      </div>
+      <div id="word-container" class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div class="space-y-2 col-span-full ">
+          <h5 class="font-pop text-neutral-500 text-center font-normal">আপনি এখনো কোন Lesson Select করেন নি</h5>
+          <h2 class="text-2xl text-center font-bold">একটি Lesson Select করুন।</h2>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Open the modal using ID.showModal() method -->
+  <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+
+  <dialog id="word_modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+      <div id="details-container">
+
+      </div>
+      <div class="modal-action">
+        <form method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn">Close</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="./js/englishJanala.js"></script>
+</body>
+
+</html>
