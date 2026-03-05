@@ -152,6 +152,10 @@ document.getElementById("search-btn").addEventListener("click", () => {
   const input = document.getElementById("search-input");
   // peak input value
   const inputValue = input.value;
+  if (!inputValue) {
+    alert("ইনপুট পাওয়া যায়নি");
+    return;
+  }
   // fetch all words
   fetch("https://openapi.programming-hero.com/api/words/all")
     .then((res) => res.json())
