@@ -112,9 +112,7 @@ function pronounceWord(word) {
 
 // display word details
 const displayWordDetails = (word) => {
-  console.log(word);
   const detailBox = document.getElementById("details-container");
-  detailBox.innerText = "hi i am form js ";
   document.getElementById("word_modal").showModal();
   detailBox.innerHTML = `
   <div class="space-y-3">
@@ -167,6 +165,7 @@ document.getElementById("search-btn").addEventListener("click", () => {
 
       displayWord(filteredWords);
     });
+  input.value = "";
 });
 
 loadLevel();
