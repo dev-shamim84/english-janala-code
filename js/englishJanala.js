@@ -78,9 +78,9 @@ const displayWord = (words) => {
               <button onclick="loadWordDetails(${
                 word.id
               })" class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80] duration-100"><i class="fa-regular fa-circle-question"></i></button>
-              <button onclick="${pronounceWord(
+              <button onclick="pronounceWord('${
                 word.word
-              )}"  class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80] duration-100"><i class="fa-solid fa-volume-low"></i></button>
+              }')"  class="btn bg-[#1A91FF10] hover:bg-[#1A91FF80] duration-100"><i class="fa-solid fa-volume-low"></i></button>
             </div>
         </div>
      `;
